@@ -62,7 +62,7 @@ export class SelectorPageComponent implements OnInit {
         filter((value: string) => value.length > 0),
         switchMap((alphaCode) => this.countryService.getCountryByAlphaCode(alphaCode) ),
 
-        switchMap( (country) => this.countryService.getCountryByBordersByCodes(country.borders!)),
+        switchMap( (country) => this.countryService.getCountryByBordersByCodes(country.borders)),
           )
       .subscribe((countries) => {
         // console.log({ borders: country.borders });
